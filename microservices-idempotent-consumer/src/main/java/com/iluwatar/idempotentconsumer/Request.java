@@ -32,7 +32,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * The {@code Request} class represents a request with a unique UUID and a status. The status of a
- * request can be one of four values: PENDING, STARTED, COMPLETED, or INERROR.
+ * request can be one of three values: PENDING, STARTED, or COMPLETED.
  */
 @Entity
 @NoArgsConstructor
