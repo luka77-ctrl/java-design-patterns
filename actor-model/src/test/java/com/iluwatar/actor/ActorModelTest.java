@@ -49,15 +49,20 @@ public class ActorModelTest {
     system.startActor(srijan);
     system.startActor(ansh);
 
-    // Ansh recieves a message from Srijan
+    // Ansh receives a message from Srijan
     ansh.send(new Message("Hello ansh", srijan.getActorId()));
 
     // Wait briefly to allow async processing
     Thread.sleep(200);
 
-    // Check that Srijan received the message
+    // Check that Ansh received the message
     assertTrue(
         ansh.getReceivedMessages().contains("Hello ansh"),
         "ansh should receive the message from Srijan");
+
+    // And Srijan should not receive any message back
+    assertTrue(
+        srijan.getReceivedMessages().isEmpty(),
+        "srijan should not receive a reply from ansh");
   }
 }
