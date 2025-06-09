@@ -45,7 +45,6 @@ public class CommandServiceImpl implements CommandService {
       author = (Author) query.uniqueResult();
     }
     if (author == null) {
-      HibernateUtil.getSessionFactory().close();
       throw new NullPointerException("Author " + username + " doesn't exist!");
     }
     return author;
@@ -59,7 +58,6 @@ public class CommandServiceImpl implements CommandService {
       book = (Book) query.uniqueResult();
     }
     if (book == null) {
-      HibernateUtil.getSessionFactory().close();
       throw new NullPointerException("Book " + title + " doesn't exist!");
     }
     return book;
