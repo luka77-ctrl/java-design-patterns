@@ -50,7 +50,7 @@ public class ActorModelTest {
     system.startActor(ansh);
 
     // Ansh receives a message from Srijan
-    ansh.send(new Message("Hello ansh", srijan.getActorId()));
+    srijan.send(new Message("Hello ansh", ansh.getActorId()));
 
     // Wait briefly to allow async processing
     Thread.sleep(200);
